@@ -7,6 +7,7 @@ pipeline {
             steps {
                 script {
                     sh """
+                        ls
                         sh 'echo "hello" >> test.txt'
                     """
                 }
