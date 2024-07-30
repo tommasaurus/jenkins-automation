@@ -1,9 +1,7 @@
 pipeline {
-    agent {
-        any
-    }
-    environment {                
-    }
+    // agent {}
+    // environment {                
+    // }
     stages {
         stage('Cleanup') {
             steps {
@@ -23,7 +21,7 @@ pipeline {
                 }
             }
         }
-        
+    }    
     post {
         always {
             script {
@@ -31,5 +29,5 @@ pipeline {
             }
         }
     }
-    }
+    
 }
