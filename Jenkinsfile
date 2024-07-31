@@ -1,8 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'git_agent'           
-        }
+    agent {        
+        label 'git_agent'                   
     }
     environment {
         GITHUB_TOKEN = credentials('GITHUB_TOKEN')
