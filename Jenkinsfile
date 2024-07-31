@@ -19,9 +19,9 @@ pipeline {
         stage('Commit and Push to Git') {
             steps {                
                 script {
-                    sh '''
-                    # Generate a random number between 1 and 15
+                    sh '''                    
                     COMMIT_COUNT=$(( ( RANDOM % 15 ) + 1 ))
+                    echo COMMIT_COUNT
                                                                                 
                     for i in $(seq 1 $COMMIT_COUNT)
                     do
