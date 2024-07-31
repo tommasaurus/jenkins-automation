@@ -9,12 +9,11 @@ pipeline {
         GITHUB_EMAIL = credentials('GITHUB_EMAIL')
     }
     stages {
-        stage('Cleanup') {
+        stage('LS') {
             steps {
                 script {
                     sh """
-                        ls
-                        sh 'echo "hello" >> test.txt'
+                        ls                        
                     """
                 }
             }
@@ -40,6 +39,8 @@ pipeline {
 
                     # Push all commits at once
                     git push https://$GITHUB_TOKEN@github.com/tommasaurus/jenkins-automation.git
+
+                    echo "success"
                     '''
                 }
             }
