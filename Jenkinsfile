@@ -20,7 +20,7 @@ pipeline {
             steps {                
                 script {
                     sh '''                    
-                    COMMIT_COUNT=$(shuf -i 1-15 -n 1)                    
+                    COMMIT_COUNT=$(shuf -i 1-7 -n 1)                    
                                                                                 
                     for i in $(seq 1 $COMMIT_COUNT)
                     do
