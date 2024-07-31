@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'my-jenkins-agent'           
+            image 'git_agent'           
         }
     }
     environment {
