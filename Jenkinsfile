@@ -31,7 +31,7 @@ pipeline {
                         git checkout main
                         git pull
                         git add test.txt
-                        git commit -m "Automated commit $i: Add 'hello' to test.txt"
+                        git commit -m "commit $i"
                     done
 
 
