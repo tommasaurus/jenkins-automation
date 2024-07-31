@@ -22,18 +22,16 @@ pipeline {
                     sh '''
                     # Generate a random number between 1 and 15
                     COMMIT_COUNT=$(( ( RANDOM % 15 ) + 1 ))
-                    
-                    echo "Will perform $COMMIT_COUNT commits."
-                    
-                    # Loop to perform commits
-                    for ((i=1; i<=COMMIT_COUNT; i++))
+                                                                                
+                    for i in $(seq 1 $COMMIT_COUNT)
                     do
-                        echo "hello from commit $i" >> test.txt  # Append to the file with commit number
-                        git config user.name "Your GitHub Username"
+                        echo "hello" >> test.txt  
+                        git config user.name "tommasaurus"
                         git config user.email "${GITHUB_EMAIL}"
                         git add test.txt
                         git commit -m "Automated commit $i: Add 'hello' to test.txt"
                     done
+
 
                     # Push all commits at once
                     git push https://$GITHUB_TOKEN@github.com/tommasaurus/jenkins-automation.git
