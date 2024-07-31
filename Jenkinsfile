@@ -20,8 +20,7 @@ pipeline {
             steps {                
                 script {
                     sh '''                    
-                    COMMIT_COUNT=$(( ( RANDOM % 15 ) + 1 ))
-                    echo COMMIT_COUNT
+                    COMMIT_COUNT=$(shuf -i 1-15 -n 1)                    
                                                                                 
                     for i in $(seq 1 $COMMIT_COUNT)
                     do
