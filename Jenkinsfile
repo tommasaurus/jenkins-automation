@@ -28,6 +28,8 @@ pipeline {
                         echo "hello" >> test.txt  
                         git config user.name "tommasaurus"
                         git config user.email "${GITHUB_EMAIL}"
+                        git checkout main
+                        git pull
                         git add test.txt
                         git commit -m "Automated commit $i: Add 'hello' to test.txt"
                     done
